@@ -11,13 +11,11 @@ import android.view.View;
 
 import java.time.Year;
 
+import lab4.progmob.ukrainepublicholidaysapi6.App;
 import lab4.progmob.ukrainepublicholidaysapi6.databinding.ActivityMainBinding;
 import lab4.progmob.ukrainepublicholidaysapi6.details.DetailsActivity;
 
 public class MainActivity extends AppCompatActivity {
-
-    // TODO: We can enter it in date spinner with years (from -- to)
-    private static final String CURRENT_YEAR = Year.now().toString();
 
     private ActivityMainBinding binding;
 
@@ -31,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        ViewModelProvider viewModelProvider = new ViewModelProvider(this);
+        App app = (App) getApplication();
+        ViewModelProvider viewModelProvider = new ViewModelProvider(this, app.getViewModelFactory());
         viewModel = viewModelProvider.get(MainViewModel.class);
 
         viewModel.getViewState().observe(this, state -> {
@@ -43,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
             adapter.setHolidays(state.getHolidays());
         });
 
-        // TODO: Get year from user
-        viewModel.getHolidays(CURRENT_YEAR);
+        viewModel.getHolidays(App.CURRENT_YEAR);
 
         initHolidaysList();
     }
@@ -56,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new HolidaysAdapter(holiday -> {
             Intent intent = new Intent(this, DetailsActivity.class);
 
-            // TODO: Check localName?
-            intent.putExtra(DetailsActivity.EXTRA_HOLIDAY, holiday.getLocalName());
+            intent.putExtra(DetailsActivity.EXTRA_HOLIDAY, holiday.getDate());
             startActivity(intent);
         });
         binding.holidaysList.setAdapter(adapter);

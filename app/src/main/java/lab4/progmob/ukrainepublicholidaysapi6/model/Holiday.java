@@ -1,18 +1,20 @@
 package lab4.progmob.ukrainepublicholidaysapi6.model;
 
-import java.time.LocalDate;
 import java.time.Year;
 
+import lab4.progmob.ukrainepublicholidaysapi6.model.db.HolidayDbEntity;
+import lab4.progmob.ukrainepublicholidaysapi6.model.network.HolidayNetworkEntity;
+
 public class Holiday {
-    private final LocalDate date;
+    private final String date;
     private final String localName;
     private final String name;
     private final String countryCode;
     private final boolean fixed;
     private final boolean global;
-    private final Year launchYear;
+    private final Integer launchYear;
 
-    public Holiday(LocalDate date, String localName, String name, String countryCode, boolean fixed, boolean global, Year launchYear) {
+    public Holiday(String date, String localName, String name, String countryCode, boolean fixed, boolean global, Integer launchYear) {
         this.date = date;
         this.localName = localName;
         this.name = name;
@@ -22,7 +24,19 @@ public class Holiday {
         this.launchYear = launchYear;
     }
 
-    public LocalDate getDate() {
+    public Holiday(HolidayDbEntity entity) {
+        this(
+                entity.getDate(),
+                entity.getLocalName(),
+                entity.getName(),
+                entity.getCountryCode(),
+                entity.isFixed(),
+                entity.isGlobal(),
+                entity.getLaunchYear()
+        );
+    }
+
+    public String getDate() {
         return date;
     }
 
@@ -46,7 +60,7 @@ public class Holiday {
         return global;
     }
 
-    public Year getLaunchYear() {
+    public Integer getLaunchYear() {
         return launchYear;
     }
 }

@@ -10,27 +10,97 @@
 
     <TextView
         android:id="@+id/localNameTv"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_dp"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
+        android:textSize="@dimen/local_name_ts"
+        android:layout_marginTop="@dimen/margin_16"
         android:gravity="center"
         tools:text="A Local Name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <!--    TODO: EditText inputType = date-->
     <TextView
         android:id="@+id/dateTv"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:textSize="16sp"
+        android:layout_marginTop="@dimen/margin_16"
+        android:textSize="@dimen/date_ts16"
         android:gravity="center"
         tools:text="2022-12-25"
         app:layout_constraintTop_toBottomOf="@id/localNameTv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/date_ts16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:gravity="center"
+        tools:text="Holiday Name"
+        app:layout_constraintTop_toBottomOf="@id/dateTv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/countryCode"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/local_name_ts"
+        android:layout_marginTop="@dimen/margin_16"
+        android:gravity="center"
+        tools:text="UA"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/fixed"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/date_ts16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:gravity="center"
+        tools:text="true"
+        app:layout_constraintTop_toBottomOf="@id/countryCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+
+    <TextView
+        android:id="@+id/global"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/date_ts16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:gravity="center"
+        tools:text="false"
+        app:layout_constraintTop_toBottomOf="@id/fixed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/launchYear"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/date_ts16"
+        android:layout_marginTop="@dimen/margin_16"
+        android:gravity="center"
+        tools:text="1965"
+        app:layout_constraintTop_toBottomOf="@id/global"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

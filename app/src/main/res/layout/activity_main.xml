@@ -8,15 +8,12 @@
     android:paddingTop="16dp"
     tools:context=".main.MainActivity">
 
-    <!--    TODO: Add select year -->
-
-    <!--    TODO: Center gravity or alignment? -->
     <TextView
         android:id="@+id/titleTv"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_dp"
         android:layout_height="wrap_content"
-        android:text="Public Holiday API"
-        android:layout_marginEnd="16dp"
+        android:text="@string/public_holiday_api"
+        android:layout_marginEnd="@dimen/margin_16"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,9 +21,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/holidaysList"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="@dimen/zero_dp"
+        android:layout_height="@dimen/zero_dp"
+        android:layout_marginTop="@dimen/margin_16"
         app:layout_constraintTop_toBottomOf="@id/titleTv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +42,7 @@
         android:id="@+id/emptyTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No holidays"
+        android:text="@string/no_holidays"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -55,7 +52,7 @@
         android:id="@+id/errorTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="An error occured while loading the list"
+        android:text="@string/error_occurred"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

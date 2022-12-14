@@ -11,8 +11,8 @@
         android:id="@+id/itemDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:layout_marginEnd="6dp"
+        android:textSize="@dimen/date_ts16"
+        android:layout_marginEnd="@dimen/date_6dp"
         tools:text="2022-12-15"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -20,9 +20,9 @@
 
     <TextView
         android:id="@+id/itemLocalNameTv"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero_dp"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="@dimen/date_ts16"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:lines="1"

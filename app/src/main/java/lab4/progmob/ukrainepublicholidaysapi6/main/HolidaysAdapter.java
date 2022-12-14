@@ -44,8 +44,6 @@ public class HolidaysAdapter
         return new HolidayViewHolder(root, this);
     }
 
-    // TODO: More details
-    // TODO: EditText as type date, no editing
     @Override
     public void onBindViewHolder(@NonNull HolidayViewHolder holder, int position) {
         Holiday holiday = holidays.get(position);

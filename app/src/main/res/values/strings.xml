@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Ukraine Public Holidays API 6</string>
+    <string name="unknown">Unknown</string>
+    <string name="country_code">Country code: %1$S</string>
+    <string name="same_year_date">Every year on the same date? %1$s</string>
+    <string name="every_county">In every county? %1$s</string>
+    <string name="launch_year">Launch year: %1$d</string>
+    <string name="public_holiday_api">Public Holiday API</string>
+    <string name="no_holidays">No holidays</string>
+    <string name="error_occurred">An error occurred while loading the list</string>
 </resources>
